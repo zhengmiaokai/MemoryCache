@@ -16,6 +16,7 @@
 @property(nonatomic, strong) MKMapTable* strongDic;
 
 @property (nonatomic, strong) MKMemoryCache* memoryCache;
+@property (nonatomic, strong) UIImage* strongImage;
 
 @end
 
@@ -46,7 +47,7 @@
     // strongArry: <NSObject: 0x6000016a84a0> strongDic: <NSObject: 0x6000016a8470>
     
     NSLog(@"weakArry: %@\nweakDic: %@", [weakArray objectAtIndex:0], [weakDic objectForKey:@"number"]);
-    // weakArry: (null) weakDic: (null)
+    // weakArry: <NSObject: 0x6000016a84a0> weakDic: <NSObject: 0x6000016a8470>
     
     [strongDic removeAllObjects];
     [strongArray removeAllObjects];
@@ -64,11 +65,17 @@
         NSString* path = [[NSBundle mainBundle] pathForResource:@"abc" ofType:@"jpeg"];
         UIImage* image = [UIImage imageWithContentsOfFile:path];
         [memoryCache setObject:image forKey:[NSString stringWithFormat:@"key_%d", i]];
+        
+        if (i == 0) {
+            self.strongImage = image;
+        }
     }
     
     /* ------------------------------------------------------------- */
+    NSLog(@"memoryCache_0: %@", [memoryCache objectForKey:@"key_0"]); // memoryCache_0: <UIImage:0x600003ce0630 anonymous {3072, 1275} renderingMode=automatic>
     NSLog(@"memoryCache_199: %@", [memoryCache objectForKey:@"key_199"]); // memoryCache_199: (null)
     NSLog(@"memoryCache_399: %@", [memoryCache objectForKey:@"key_399"]); // memoryCache_399: <UIImage:0x6000008857a0 anonymous {3072, 1275} renderingMode=automatic>
+    
 }
 
 @end
