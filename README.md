@@ -11,5 +11,5 @@
 ##### 弱引用校验
 <img width="627" alt="image" src="https://user-images.githubusercontent.com/13111933/155185766-d926907a-f8af-4ff8-93b0-0d32b038b553.png">
 
-##### Cache使用示例
+##### MemoryCache使用示例
 <img width="627" alt="image" src="https://user-images.githubusercontent.com/13111933/155185345-372e1b6e-bce7-4e27-b714-f5c05c22fc3f.png">
