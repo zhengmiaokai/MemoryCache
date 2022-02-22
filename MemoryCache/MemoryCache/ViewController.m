@@ -75,7 +75,6 @@
     NSLog(@"memoryCache_0: %@", [memoryCache objectForKey:@"key_0"]); // memoryCache_0: <UIImage:0x600003ce0630 anonymous {3072, 1275} renderingMode=automatic>
     NSLog(@"memoryCache_199: %@", [memoryCache objectForKey:@"key_199"]); // memoryCache_199: (null)
     NSLog(@"memoryCache_399: %@", [memoryCache objectForKey:@"key_399"]); // memoryCache_399: <UIImage:0x6000008857a0 anonymous {3072, 1275} renderingMode=automatic>
-    
 }
 
 @end
